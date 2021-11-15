@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function search (){
+	read -p "[>] Path of the wordlist to use: " wordlist
+	read -p "[>] File extensions to search seppareted by commas, example(txt,hmlt,php): " extensions
+	echo "[>] Searching, to stop it ctrl+z"
+	execution=$(gobuster dir -u $1 -w $wordlist -s 200,301 -x $extensions -o search.txt)
+	echo $execution
+}
+
+search $1
+
+
+
