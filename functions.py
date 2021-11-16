@@ -127,7 +127,7 @@ def portScan_full(target : str):
 
 def verify_email(email: str):
     try:
-        api_key= "cc747b1473174708516b76bb40828822043cf553"
+        api_key= ""
         hunter = PyHunter(api_key=api_key)
 
         result = hunter.email_verifier(email, raw=False)
