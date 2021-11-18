@@ -33,8 +33,9 @@ Scanner is a python tool to automate tasks while auditing a target, you can scan
 ```
 $ git clone https://github.com/jmorin8/Scanner
 $ cd Scanner
-$ pip3 install -r requirements.txt
 $ chmod +x searcHidden
+$ cd Requirements/
+$ pip3 install -r requirements.txt
 ```
 
 ### Wordlists
