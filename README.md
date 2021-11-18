@@ -1,17 +1,16 @@
-``` 
-================================================== 
- ____
-/ ___|   ___   __ _  _ __   _ __    ___  _ __
-\___ \  / __| / _` || '_ \ | '_ \  / _ \| '__|
- ___) || (__ | (_| || | | || | | ||  __/| |
-|____/  \___| \__,_||_| |_||_| |_| \___||_|                           
-================================================== 
-Made by: jmorin8
 ```
-
+==================================================================
+=   ____   ____      __      ___    __  ___    __  ____  _____   =
+=  / ___| /  __|    /  \    |   \  | | |   \  | | |  __||  _  \  =
+= | (___  | |      / /\ \   | |\ \ | | | |\ \ | | | |__ | |__) | =
+=  \__  \ | |     / /__\ \  | | \ \| | | | \ \| | | ___||  _  /  =
+=  ___) | | |__  / /    \ \ | |  \   | | |  \   | | |__ | | \ \  =
+= |____/   \___|/_/      \_\|_|   \__| |_|   \__| |____||_|  \_\ =
+================================================================== Made by: jmorin8
+```
 ![for the badge_made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)
 # :desktop_computer::mag: Scanner
-Scanner is a python tool to automate tasks while auditing a target, such as port scanning and search hidden files/directories in a website.
+Scanner is a python tool to automate tasks while auditing a target, you can scan ports and search hidden files/directories in a website.
 
 
 # :book: Content 
@@ -19,7 +18,7 @@ Scanner is a python tool to automate tasks while auditing a target, such as port
     * Linux | Unix
     * Wordlists
     * Gobuster
-* [How_to_use?](#How-to-use?)
+* [How to use?](#How-to-use?)
     * Options
       * PortScan
       * Search Hidden
@@ -27,7 +26,7 @@ Scanner is a python tool to automate tasks while auditing a target, such as port
  * [Logs](#Logs)
 
 
-# :hammer_and_wrench: Installation
+# :hammer_and_wrench: <a name="Installation"></a>Installation
 **Important: linux | unix env, python 3.9.1, wordlists, gobuster**
  
 ### Linux & Unix
@@ -46,13 +45,12 @@ $ cd SecLists/Discovery/Web-Content # Wordlists for web-content discovery are un
 ```
 
 ### Gobuster
-You must have got gobuster by default in your linux env, if don´t just run the next command
+Gobuster must have been installed by default in your linux env, if don´t just run the next command:
 ```
 $ sudo apt intall gobuster 
 ```
 
-
-# :question: How to use?
+# :question: <a name="How-to-use?"></a>How to use?
 A the beggining you can deploy the menu executing the command `python3 scanner.py -h | --help` to see the available options 
 ```
 ==================================================
@@ -168,10 +166,18 @@ Repo: https://github.com/jmorin8/Scanner
 [>] File extensions to search seppareted by commas, example(txt,hmtl,php): txt,php
 [>] Searching, to stop it ctrl+z
 ```
+<br>When you stop the execution results will be saved in a `txt` file and will looks as follow:</br>
+```
+/index.php            (Status: 200) [Size: 25169]
+/resources            (Status: 301) [Size: 316] [--> http://127.0.0.1/resources/]
+/assets               (Status: 301) [Size: 313] [--> http://127.0.0.1/assets/]
+/portal.php           (Status: 200) [Size: 125]
+/css                  (Status: 301) [Size: 310] [--> http://127.0.0.1/css/]
+```
 
 
-# :file_folder: Reports
-Every option you execute at the end will create a report in a `txt` file which will have all the results of the execution then will ask you if you want to send it, if you accept the program will ask you for a `gmail` account then will ask for your password (at the moment you write it, will be hidden), a destination which could be your friend´s email, email subject and a message you want to send as a body email, otherwise the program will finish
+# :file_folder: <a name="Reports"></a>Reports
+Every option you execute at the end will create a report in a `txt` file which will have all the results of the execution then will ask you if you want to send it, if you accept the program will ask you for a `gmail` account then will ask for your password (at the moment you write it, will be hidden), a destination which could be your friend´s email, email subject and a message you want to send as a body email, if you don´t accept the program will finish
 ``` 
 [>] Creating report
 [>] Do you want to send created reports? [y/n]: y
@@ -183,7 +189,8 @@ Every option you execute at the end will create a report in a `txt` file which w
 [>] Sendind email..
 [>] Succesfully sent
 ```
-:warning: **IMPORTANT** :warning: If you accept to send reports you must create your own apiKey at [hunter](https://hunter.io/) and change line 129 from `functions.py` for your apkikey
+## :warning: **IMPORTANT** :warning: 
+If you accept to send reports you must create your own apiKey at [hunter](https://hunter.io/) and change line 129 from `functions.py` for your apikey
 ```
 line 129 api_key= "yourApiKey"
 ```
@@ -191,10 +198,9 @@ if you want to ignore this part of the project remove lines 42 and 45 from `scan
 ```
 line 42 functions.send_reports()
 line 45 functions.send_reports()
-
 ```
 
-# :bookmark_tabs: Logs
+# :bookmark_tabs: <a name="Logs"></a>Logs
 Logs are a detailed list of an application information, system performance, or user activities, in this project we use them to get a registrer of user activities. Every event and option you use will be saved in a `log` file, at the end of each execution you can check the `log` file to see how the events were registered and if the project fail will show you in what it fails, the file may look like this
 ```
 2021-11-16 00:47:34,837 Initializing port scan (full scan)
