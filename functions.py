@@ -209,11 +209,11 @@ def send_reports():
                             server.sendmail(usr, to, fullmessage)
 
                         server.close()
+                        log.info('Succesfully sent')
+                        print('[>] Succesfully sent')
                     except:
                         print('[ERROR] Something went wrong')
 
-                    log.info('Succesfully sent')
-                    print('[>] Succesfully sent')
                 except:
                     log.info('Something went wrong while sending email')
                     print('[>] Something went wrong while sending email')
